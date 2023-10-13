@@ -1,0 +1,21 @@
+syntax = "proto3"
+
+
+
+
+
+  service PublishService {
+    rpc add(msg Msg) returns(PublishResponse);
+    rpc update(msg Msg) returns(PublishResponse);
+    rpc delete(msg Msg) returns(PublishResponse);
+  }
+
+  message PublishResponse {
+    int32 code = 1;
+    string msg = 2;
+  }
+
+message Msg {
+  string id = 1;
+  string data = 2; 
+}
